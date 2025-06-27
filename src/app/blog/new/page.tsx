@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
+import {useRouter} from "next.navigation"
 import Cookies from "js-cookie";
 import { RefreshCw } from "lucide-react";
 import React, { useMemo, useRef, useState } from "react";
@@ -19,6 +19,7 @@ import React, { useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { title } from "process";
 import axios from "axios";
+ const router = useRouter();
 
 import { author_service, BlogCategory, useAppData} from "@/context/AppContext";
 import { headers } from "next/headers";
