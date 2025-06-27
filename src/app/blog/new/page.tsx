@@ -19,13 +19,13 @@ import React, { useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { title } from "process";
 import axios from "axios";
-import { author_service, BlogCategory ,fetchBlog} from "@/context/AppContext";
+import { author_service, BlogCategory} from "@/context/AppContext";
 import { headers } from "next/headers";
 import toast, { ToastBar } from "react-hot-toast";
 
 const JoditEditor = dynamic(()=> import('jodit-react'),{ssr:false});
 
-
+const {fetchBlog} = useAppData();
 
 const AddBlog = () => {
     const editor = useRef(null);
