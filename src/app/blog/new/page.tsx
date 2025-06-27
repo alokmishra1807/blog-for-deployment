@@ -19,7 +19,7 @@ import React, { useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { title } from "process";
 import axios from "axios";
-import { author_service, BlogCategory } from "@/context/AppContext";
+import { author_service, BlogCategory ,fetchBlog} from "@/context/AppContext";
 import { headers } from "next/headers";
 import toast, { ToastBar } from "react-hot-toast";
 
@@ -145,7 +145,11 @@ Authorization:`Bearer ${token}`
     image:"",
     blogcontent:"",
 })
-setContent("");;
+setContent("");
+	     router.push("/blogs")
+     setTimeout(()=>{
+fetchBlog()
+     },4000);;
     } catch (error) {
         toast.error("Error while adding blog")
     }finally{
