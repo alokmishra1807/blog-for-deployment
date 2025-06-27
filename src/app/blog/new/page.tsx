@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {useRouter} from "next.navigation"
+
 import Cookies from "js-cookie";
 import { RefreshCw } from "lucide-react";
 import React, { useMemo, useRef, useState } from "react";
@@ -19,15 +19,13 @@ import React, { useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { title } from "process";
 import axios from "axios";
- const router = useRouter();
 
-import { author_service, BlogCategory, useAppData} from "@/context/AppContext";
+import { author_service, BlogCategory} from "@/context/AppContext";
 import { headers } from "next/headers";
 import toast, { ToastBar } from "react-hot-toast";
 
 const JoditEditor = dynamic(()=> import('jodit-react'),{ssr:false});
 
-const {fetchBlog} = useAppData();
 
 const AddBlog = () => {
     const editor = useRef(null);
@@ -147,11 +145,8 @@ Authorization:`Bearer ${token}`
     image:"",
     blogcontent:"",
 })
-setContent("");
-	     router.push("/blogs")
-     setTimeout(()=>{
-fetchBlog()
-     },4000);;
+setContent("");:
+	   
     } catch (error) {
         toast.error("Error while adding blog")
     }finally{
