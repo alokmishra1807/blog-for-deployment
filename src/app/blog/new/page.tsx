@@ -117,7 +117,7 @@ const aiBlogResponse = async()=>{
 		}),
 		[]
 	);
-  const handleSubmit = async (e:any) => {
+ const handleSubmit = async (e:any) => {
     e.preventDefault();
     setLoading(true);
 
@@ -145,8 +145,7 @@ Authorization:`Bearer ${token}`
     image:"",
     blogcontent:"",
 })
-setContent("");:
-	   
+setContent("");;
     } catch (error) {
         toast.error("Error while adding blog")
     }finally{
